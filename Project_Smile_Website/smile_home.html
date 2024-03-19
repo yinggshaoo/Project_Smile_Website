@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMILE</title>
+
+    <head>
+
+        <style>
+            body {
+                background-image: url(./image/back.png);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: right;
+                background-size: 99%;
+            }
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+
+            header {
+                display: flex;
+                padding: 15px 450px 10px 500px;
+                text-align: center;
+                width: max-content;
+
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #FFD700;
+                border-radius: 50px 50px;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a,
+            .dropbtn {
+                display: inline-block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover,
+            .dropdown:hover .dropbtn {
+                background-color: #ddd;
+            }
+
+            li.dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #FFD700;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            body {
+                font-family: Arial;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            body {
+                font-family: serif;
+                margin: 0
+            }
+
+            .mySlides {
+                display: none
+            }
+
+            img {
+                vertical-align: middle;
+            }
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1200px;
+                max-height: 1200px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* Caption text */
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 20px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
+            }
+
+            div.gallery {
+                border: 2px solid #ccc;
+                background-color: rgba(255, 255, 255, 0.752);
+            }
+
+            div.gallery:hover {
+                border: 2px solid #777;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                transition: 0.3s;
+                background-color: white;
+            }
+
+            div.gallery img {
+                width: 100%;
+                height: 400px;
+                width: 400px;
+                margin: 14px;
+            }
+
+            div.desc {
+                padding: 20px;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .responsive {
+                padding: 0 6px;
+                float: left;
+                width: 30%;
+                margin: 0px 0px 50px 40px;
+            }
+
+            @media only screen and (max-width: 700px) {
+                .responsive {
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+
+            @media only screen and (max-width: 500px) {
+                .responsive {
+                    width: 100%;
+                }
+            }
+
+            .clearfix:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            h2:hover {
+                background-color: #FFD700;
+            }
+
+            /* Style the tab */
+            .tab {
+                overflow: hidden;
+                border: 2px solid #FFD700;
+                background-color: lemonchiffon;
+            }
+
+            /* Style the buttons inside the tab */
+            .tab button {
+                background-color: lemonchiffon;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+                color: #FFD700;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                color: black;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                color: black;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 2px solid #FFD700;
+                border-top: none;
+                background-color: lemonchiffon;
+            }
+        </style>
+    </head>
+
+<body>
+    <header><a href="http://127.0.0.1:5503/smile_home.html">
+            <img id="home" src="./image/smile_logo.png" alt=""></a>
+        <h1 style="font-size: 70px;">S M I L E</h1>
+    </header>
+    <div class="navbar" style="font-size: 22px;">
+        <ul>
+            <li><a href="http://127.0.0.1:5503/smile_home.html">HOME</a></li>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">SMILE</a>
+                <div class="dropdown-content">
+                    <a href="http://127.0.0.1:5503/smile_home.html#movie">MOVIE</a>
+                    <a href="http://127.0.0.1:5503/smile_home.html#brand">BRAND</a>
+                    <a href="http://127.0.0.1:5503/smile_home.html#profile">PROFILE</a>
+                </div>
+            <li><a href="http://127.0.0.1:5503/smile_news.html#news">NEWS</a></li>
+            <li><a href="http://127.0.0.1:5503/smile_menu.html">MENU</a></li>
+            <li><a href="http://127.0.0.1:5503/smile_faq.html">FAQ</a></li>
+            <li><a href="http://127.0.0.1:5503/smile_contact.html">CONTACT</a></li>
+            </li>
+        </ul>
+    </div>
+    <br><br><br><br><br>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="./image/IMG_3953.jpg" style="width:1200px; height: 700px;">
+            <div class="text" style="font-size: 22px;">拍照區(2F)</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="./image/IMG_3972.jpg" style="width:1200px; height: 700px;">
+            <div class="text" style="font-size: 22px;">一樓(1F)</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="./image/IMG_3942.jpg" style="width:1200px; height: 700px;">
+            <div class="text" style="font-size: 22px;">餵食互動</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br><br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <h1 id="movie" style="text-align: center;border-left: 8px solid #FFD700;
+    display: flex;margin: 0px 0px 0px 700px;">MOVIE</h1>
+    <br><br><br><br><br>
+    <video width="600" height="900" controls style="display: flex; margin: 0px 450px;">
+        <source src="./image/IMG_3904.MOV" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+    <br><br><br><br><br><br><br><br>
+    <h1 id="brand" style="text-align: center;border-left: 8px solid #FFD700;
+    display: flex;margin: 0px 0px 0px 700px;">BRAND</h1>
+    <br><br><br><br><br>
+    <img src="./image/IMG_3953.jpg" style="width:1200px; height: 700px;margin: 0px 0px 0px 140px;">
+    <br><br><br>
+    <h2 id="brand_text" style="text-align: left;padding: 0px 0px 0px 140px;">
+        創立這個品牌的起源於—<br>
+        人與人之間只需要一個「微笑」便能拉近彼此的距離。<br>
+        因此微笑不僅僅是一種表情動作，微笑還是一種神秘的語言，不須實際言語的溝通語言，卻能從中得到一股善意的力量。<br>
+        希望能藉由創立這品牌帶領大眾感受到「微笑」的能量。</h2>
+    <br><br><br><br><br><br><br><br>
+    <h1 id="profile" style="text-align: center;border-left: 8px solid #FFD700;
+    display: flex;margin: 0px 0px 0px 700px;">PROFILE</h1>
+    <br><br><br><br><br><br><br><br>
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile1.jpg">
+                <img src="./image/profile1.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">米菲</div>
+        </div>
+    </div>
+
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile2.jpg">
+                <img src="./image/profile2.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">球球</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile3.jpg">
+                <img src="./image/profile3.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">雪糕</div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile4.jpg">
+                <img src="./image/profile4.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">圓圓</div>
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile5.jpg">
+                <img src="./image/profile5.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">貝貝</div>
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile6.jpg">
+                <img src="./image/profile6.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">泡泡</div>
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile7.jpg">
+                <img src="./image/profile7.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">妞妞</div>
+        </div>
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+            <a target="_blank" href="./image/profile8.jpg">
+                <img src="./image/profile8.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc">巧克力</div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div style="padding:6px;">
+        <p></p>
+        <p></p>
+        <br><br><br><br><br><br><br><br>
+        <!-- <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')" style="font-size: 22px;">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')" style="font-size: 22px;">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')" style="font-size: 22px;">Tokyo</button>
+        </div>
+        <div id="London" class="tabcontent">
+            <h3 style="font-size: 22px;">London</h3>
+            <p style="font-size: 18px;">London is the capital city of England.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3 style="font-size: 22px;">Paris</h3>
+            <p style="font-size: 18px;">Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3 style="font-size: 22px;">Tokyo</h3>
+            <p style="font-size: 18px;">Tokyo is the capital of Japan.</p>
+        </div> -->
+        <a href="#home" class="totop">
+            <img id="totop" style="width: 5%; height: 7%;position: fixed;
+            bottom: 30px;right: 0px;border: 1px solid black;width: 40px;height: 40px;
+            background-color: white;" src="./image/totop.png" alt=""></a>
+        <br>
+        <div class="copyright" style="text-align: center; background-color: #FFD700;border-radius: 50px 50px;">
+            Copyright &copy 2023 SMILE
+
+        </div>
+
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+</body>
+
+</html>

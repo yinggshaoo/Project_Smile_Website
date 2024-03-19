@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMILE</title>
+
+    <head>
+
+        <style>
+            body {
+                background-image: url(/image/back.png);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: right;
+                background-size: 99%;
+            }
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+
+            header {
+                display: flex;
+                padding: 15px 450px 10px 500px;
+                text-align: center;
+                width: max-content;
+
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #FFD700;
+                border-radius: 50px 50px;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a,
+            .dropbtn {
+                display: inline-block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover,
+            .dropdown:hover .dropbtn {
+                background-color: #ddd;
+            }
+
+            li.dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #FFD700;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            a {
+                color: black
+            }
+
+            a.news_a:hover{
+                color: gray;
+                background-color: #FFD700;
+            }
+
+            body {
+                font-family: serif;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+
+            /* Style the tab */
+            .tab {
+                overflow: hidden;
+                border: 2px solid #FFD700;
+                background-color: lemonchiffon;
+            }
+
+            /* Style the buttons inside the tab */
+            .tab button {
+                background-color: lemonchiffon;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+                color: #FFD700;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                color: black;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                color: black;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 2px solid #FFD700;
+                border-top: none;
+                background-color: lemonchiffon;
+            }
+        </style>
+    </head>
+
+<body>
+    <header><a href="http://127.0.0.1:5503/smile_home.html">
+            <img id="home" src="./image/smile_logo.png" alt=""></a>
+        <h1 style="font-size: 70px;">S M I L E</h1>
+    </header>
+    <div class="navbar" style="font-size: 22px;">
+        <ul>
+            <li><a href="http://127.0.0.1:5503/smile_home.html">HOME</a></li>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">SMILE</a>
+                <div class="dropdown-content">
+                    <a href="http://127.0.0.1:5503/smile_home.html#movie">MOVIE</a>
+                    <a href="http://127.0.0.1:5503/smile_home.html#brand">BRAND</a>
+                    <a href="http://127.0.0.1:5503/smile_home.html#profile">PROFILE</a>
+                </div>
+            <li><a href="http://127.0.0.1:5503/smile_news.html#news">NEWS</a></li>
+            <li><a href="http://127.0.0.1:5503/smile_menu.html">MENU</a></li>
+            <li><a href="http://127.0.0.1:5503/smile_faq.html">FAQ</a></li>
+            <li><a href="http://127.0.0.1:5503/smile_contact.html">CONTACT</a></li>
+            </li>
+        </ul>
+    </div>
+    <br><br><br><br><br><br><br>
+    <h1 style="text-align: center;border-left: 8px solid #FFD700;
+    display: flex;margin: 0px 0px 0px 700px;">NEWS</h1>
+    <br><br><br>
+    <div style="font-size: 18px;">
+        <div class="news_div" style="display: flex;margin: 20px 0px 20px 80px;">
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px 60px 10px;">2023.12.25</div>
+                <div style="margin: 7px 10px 60px 10px;"><a class="news_a"  href="">|活動|CHRISTMAS PARTY～聖誕活動！ </a></div>
+            </div>
+
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px;">2023.12.02</div>
+                <div style="margin: 7px 10px 50px 10px;"><a class="news_a" href="">|公告|因店面整修～特別公休一日！ </a></div>
+            </div>
+        </div>
+
+        <div class="news_div" style="display: flex;margin: 20px 0px 20px 80px;">
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px 60px 10px;">2023.12.25</div>
+                <div style="margin: 7px 10px 60px 10px;"><a class="news_a" href="">|活動|CHRISTMAS PARTY～聖誕活動！ </a></div>
+            </div>
+
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px;">2023.12.02</div>
+                <div style="margin: 7px 10px 50px 10px;"><a class="news_a" href="">|公告|因店面整修～特別公休一日！ </a></div>
+            </div>
+        </div>
+
+        <div class="news_div" style="display: flex;margin: 20px 0px 20px 80px;">
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px 60px 10px;">2023.12.25</div>
+                <div style="margin: 7px 10px 60px 10px;"><a class="news_a" href="">|活動|CHRISTMAS PARTY～聖誕活動！ </a></div>
+            </div>
+
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px;">2023.12.02</div>
+                <div style="margin: 7px 10px 50px 10px;"><a class="news_a" href="">|公告|因店面整修～特別公休一日！ </a></div>
+            </div>
+        </div>
+
+        <div class="news_div" style="display: flex;margin: 20px 0px 20px 80px;">
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px 60px 10px;">2023.12.25</div>
+                <div style="margin: 7px 10px 60px 10px;"><a class="news_a" href="">|活動|CHRISTMAS PARTY～聖誕活動！ </a></div>
+            </div>
+
+            <div
+                style="margin: 60px 20px 60px 130px;padding: 50px 0px 0px 0px;display: flex;border-bottom: 1px solid black;border-top: 1px solid black;">
+                <div style="margin: 10px 10px;">2023.12.02</div>
+                <div style="margin: 7px 10px 50px 10px;"><a class="news_a" href="">|公告|因店面整修～特別公休一日！ </a></div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <br><br><br><br><br><br><br><br>
+        <!-- <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')" style="font-size: 22px;">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')" style="font-size: 22px;">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')" style="font-size: 22px;">Tokyo</button>
+        </div>
+        <div id="London" class="tabcontent">
+            <h3 style="font-size: 22px;">London</h3>
+            <p style="font-size: 18px;">London is the capital city of England.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3 style="font-size: 22px;">Paris</h3>
+            <p style="font-size: 18px;">Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3 style="font-size: 22px;">Tokyo</h3>
+            <p style="font-size: 18px;">Tokyo is the capital of Japan.</p>
+        </div> -->
+        <a href="#home">
+            <img id="totop" 
+            style="width: 5%; height: 7%;position: relative;
+            bottom: 150px;right: -720px;border: 1px solid black;width: 40px;height: 40px;"
+            src="./image/totop.png" alt=""></a>
+        <br><br><br><br><br><br><br><br>
+        <div class="copyright" 
+        style="text-align: center; background-color: #FFD700;border-radius: 50px 50px;">
+            Copyright &copy 2023 SMILE
+
+        </div>
+
+
+        <script>
+
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+</body>
+
+</html>
